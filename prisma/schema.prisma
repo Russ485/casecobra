@@ -86,7 +86,7 @@ model ShippingAddress {
   name        String
   street      String
   city        String
-  postalcode  String
+  postalCode  String
   country     String
   state       String?
   phoneNumber String?
@@ -98,7 +98,7 @@ model BillingAddress {
   name        String
   street      String
   city        String
-  postalcode  String
+  postalCode  String
   country     String
   state       String?
   phoneNumber String?
