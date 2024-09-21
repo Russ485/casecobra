@@ -37,7 +37,7 @@ const LoginModal = ({
             <span className="font-medium text-zinc-900">
               Your configuration was saved!
             </span>{" "}
-            Please login or create an account to complete ypur purchase
+            Please login or create an account to complete your purchase
           </DialogDescription>
         </DialogHeader>
         <div className="grid grid-cols-2 gap-6 divide-x divide-gray-200">
