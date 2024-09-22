@@ -80,3 +80,9 @@ export const createCheckoutSession = async ({
 
   return { url: stripeSession.url };
 };
+
+export const checkUserIsLogin = async () => {
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
+  return user;
+};

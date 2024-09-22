@@ -10,9 +10,7 @@ interface NavbarProps {}
 const Navbar = async (props: NavbarProps) => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-  console.log(user);
   const isAdmin = user?.email === process.env.ADMIN_EMAIL;
-  console.log(isAdmin);
 
   return (
     <nav className="sticky z-[100] h-14 inset-x-0 top-0 w-full border-b border-grey-200 bg-white/75 backdrop-blur-lg transition-all">

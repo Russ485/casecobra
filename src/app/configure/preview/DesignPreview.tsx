@@ -10,7 +10,7 @@ import { useMutation } from "@tanstack/react-query";
 import { ArrowRight, Check } from "lucide-react";
 import { useEffect, useState } from "react";
 import Confetti from "react-dom-confetti";
-import { createCheckoutSession } from "./actions";
+import { checkUserIsLogin, createCheckoutSession } from "./actions";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
@@ -24,8 +24,10 @@ const DesignPreview = ({ configuration }: DesignPreviewProps) => {
   const router = useRouter();
   const { toast } = useToast();
   const { id } = configuration;
-  const { user } = useKindeBrowserClient();
-  console.log(user);
+  //const { user } = useKindeBrowserClient();
+
+  const user = checkUserIsLogin();
+  console.log(`${user}    user object is here`);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
