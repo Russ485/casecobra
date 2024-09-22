@@ -22,7 +22,7 @@ const Navbar = async (props: NavbarProps) => {
           <div className="h-full flex items-center space-x-4">
             {user ? (
               <>
-                <Link
+                <a
                   href="/api/auth/logout"
                   className={buttonVariants({
                     size: "sm",
@@ -30,9 +30,9 @@ const Navbar = async (props: NavbarProps) => {
                   })}
                 >
                   Sign out
-                </Link>
+                </a>
                 {isAdmin ? (
-                  <Link
+                  <a
                     href="/dashboard"
                     className={buttonVariants({
                       size: "sm",
@@ -40,7 +40,7 @@ const Navbar = async (props: NavbarProps) => {
                     })}
                   >
                     Dashboard ✨
-                  </Link>
+                  </a>
                 ) : null}
                 <Link
                   href="/configure/upload"
@@ -55,7 +55,7 @@ const Navbar = async (props: NavbarProps) => {
               </>
             ) : (
               <>
-                <Link
+                <a
                   href="/api/auth/register"
                   className={buttonVariants({
                     size: "sm",
@@ -63,8 +63,8 @@ const Navbar = async (props: NavbarProps) => {
                   })}
                 >
                   Sign up
-                </Link>
-                <Link
+                </a>
+                <a
                   href="/api/auth/login"
                   className={buttonVariants({
                     size: "sm",
@@ -72,7 +72,7 @@ const Navbar = async (props: NavbarProps) => {
                   })}
                 >
                   Login
-                </Link>
+                </a>
                 <div className="h-8 w-px bg-zinc-200 hidden sm:block" />
                 <Link
                   href="/configure/upload"
