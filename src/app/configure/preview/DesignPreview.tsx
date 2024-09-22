@@ -10,7 +10,7 @@ import { useMutation } from "@tanstack/react-query";
 import { ArrowRight, Check } from "lucide-react";
 import { useEffect, useState } from "react";
 import Confetti from "react-dom-confetti";
-import { checkUserIsLogin, createCheckoutSession } from "./actions";
+import { createCheckoutSession } from "./actions";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
@@ -23,10 +23,39 @@ type DesignPreviewProps = {
 const DesignPreview = ({ configuration }: DesignPreviewProps) => {
   const router = useRouter();
   const { toast } = useToast();
+  const { user } = useKindeBrowserClient();
+  // const [user, setUser] = useState<{
+  //   id: string;
+  //   email: string | null;
+  //   given_name: string | null;
+  //   family_name: string | null;
+  //   picture: string | null;
+  // } | null>(null);
   const { id } = configuration;
-  //const { user } = useKindeBrowserClient();
+  // const { user: kindeUser, isAuthenticated } = useKindeBrowserClient();
 
-  const user = checkUserIsLogin();
+  // useEffect(() => {
+  //   let retryTimeout: NodeJS.Timeout | null = null;
+
+  //   function handleSetUser() {
+  //     if (isAuthenticated) {
+  //       setUser(kindeUser);
+  //     } else {
+  //       console.log("User not authenticated, retrying...");
+  //       retryTimeout = setTimeout(() => {
+  //         handleSetUser();
+  //       }, 500); // Повторяем проверку через 500 мс
+  //     }
+  //   }
+
+  //   handleSetUser();
+
+  //   // Очищаем таймаут при размонтировании компонента
+  //   return () => {
+  //     if (retryTimeout) clearTimeout(retryTimeout);
+  //   };
+  // }, [isAuthenticated, kindeUser]);
+
   console.log(`${user}    user object is here`);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
