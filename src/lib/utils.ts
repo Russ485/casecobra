@@ -41,6 +41,6 @@ export function constructMetadata({
       images: [image],
     },
     icons,
-    metadataBase: new URL("https://casecobra-russ485s-projects.vercel.app/"),
+    metadataBase: new URL("https://casecobra-six-blond.vercel.app/"),
   };
 }

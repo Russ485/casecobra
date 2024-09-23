@@ -24,46 +24,15 @@ const DesignPreview = ({ configuration }: DesignPreviewProps) => {
   const router = useRouter();
   const { toast } = useToast();
   const { user } = useKindeBrowserClient();
-  // const [user, setUser] = useState<{
-  //   id: string;
-  //   email: string | null;
-  //   given_name: string | null;
-  //   family_name: string | null;
-  //   picture: string | null;
-  // } | null>(null);
   const { id } = configuration;
-  // const { user: kindeUser, isAuthenticated } = useKindeBrowserClient();
 
-  // useEffect(() => {
-  //   let retryTimeout: NodeJS.Timeout | null = null;
-
-  //   function handleSetUser() {
-  //     if (isAuthenticated) {
-  //       setUser(kindeUser);
-  //     } else {
-  //       console.log("User not authenticated, retrying...");
-  //       retryTimeout = setTimeout(() => {
-  //         handleSetUser();
-  //       }, 500); // Повторяем проверку через 500 мс
-  //     }
-  //   }
-
-  //   handleSetUser();
-
-  //   // Очищаем таймаут при размонтировании компонента
-  //   return () => {
-  //     if (retryTimeout) clearTimeout(retryTimeout);
-  //   };
-  // }, [isAuthenticated, kindeUser]);
-
-  console.log(`${user}    user object is here`);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
 
   useEffect(() => {
     setShowConfetti(true);
-  });
+  }, []);
 
   const { color, finish, material, model } = configuration;
 
